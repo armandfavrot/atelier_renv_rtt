@@ -73,14 +73,6 @@ data = data_interval_level %>%
 data_predictions = data 
 
 
-
-
-
-
-
-
-
-
 data_description_plot = data %>%
   
   filter (pmid %in% unique (data$pmid)[c (1, 101, 201, 301, 401, 501)]) %>%
@@ -98,7 +90,6 @@ dev.off()
 
 
 ## ALFAM2
-
 
 alfam2_predictions =  alfam2 (
   pars = alfam2pars01,
@@ -121,7 +112,6 @@ alfam2_predictions = alfam2_predictions %>%
   mutate (dataset = data$dataset) %>%
   
   select (pmid, time, j, e, truth_j, truth_e, dataset)
-
 
 
 data_predictions = data_predictions %>%
@@ -164,7 +154,6 @@ write.csv(evalutation_metrics, file = "results/table1.csv")
 
 
 # Comparison
-
 
 observed_vs_predicted_values_plot = data_predictions %>% 
   
